@@ -1,0 +1,20 @@
+groups:
+  - name: service_alerts
+    rules:
+      - alert: ServiceDown
+        expr: up == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "🔴 Сервис {{ $labels.instance }} недоступен"
+          description: "Сервис {{ $labels.job }} не отвечает уже более 30 секунд."
+
+      - alert: HighLatency
+        expr: http_request_duration_seconds > 1
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: " Высокая задержка ответа"
+          description: "Среднее время ответа > 1 секунды."
