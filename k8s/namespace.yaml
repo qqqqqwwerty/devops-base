@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: devops-base
+  labels:
+    name: devops-base
+    environment: development
