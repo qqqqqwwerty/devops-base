@@ -12,10 +12,10 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #e0e0e0;
+            background: #0a0a0a;
             min-height: 100vh;
         }
         
@@ -27,179 +27,315 @@
         
         header {
             text-align: center;
-            padding: 60px 20px;
-            color: white;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-bottom: 1px solid #333;
         }
         
         header h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
         
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+        header .subtitle {
+            font-size: 1.4em;
+            color: #a0a0a0;
+            margin-bottom: 10px;
+        }
+        
+        header .description {
+            font-size: 1.1em;
+            color: #808080;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         .content {
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            margin-top: -30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: #111;
+            border-radius: 12px;
+            padding: 50px;
+            margin-top: -40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 1px solid #222;
         }
         
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
         
         .section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
+            color: #fff;
+            margin-bottom: 25px;
             font-size: 2em;
+            font-weight: 600;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .section p {
+            color: #b0b0b0;
+            line-height: 1.8;
         }
         
         .tech-stack {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            margin: 20px 0;
+            margin: 30px 0;
         }
         
         .tech-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 10px;
             text-align: center;
-            border: 2px solid #e9ecef;
+            border: 1px solid #333;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .tech-item:hover::before {
+            transform: scaleX(1);
         }
         
         .tech-item:hover {
             border-color: #667eea;
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
         }
         
         .tech-item h3 {
-            color: #667eea;
-            margin-bottom: 10px;
+            color: #fff;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .tech-item p {
+            color: #808080;
+            font-size: 0.9em;
         }
         
         .features {
             list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
         }
         
         .features li {
-            padding: 10px 0;
-            border-bottom: 1px solid #e9ecef;
+            padding: 15px 20px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            color: #b0b0b0;
+            transition: all 0.3s ease;
         }
         
-        .features li:before {
-            content: "✓ ";
-            color: #28a745;
+        .features li:hover {
+            background: #222;
+            transform: translateX(5px);
+        }
+        
+        .features li::before {
+            content: "→";
+            color: #667eea;
             font-weight: bold;
             margin-right: 10px;
         }
         
         .cta-button {
             display: inline-block;
-            background: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 15px 30px;
+            padding: 15px 35px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             margin: 20px 10px;
-            font-weight: bold;
-            transition: background 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
         }
         
         .cta-button:hover {
-            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
         
         .cta-button.secondary {
-            background: #28a745;
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
         }
         
         .cta-button.secondary:hover {
-            background: #218838;
+            background: #667eea;
+            color: white;
         }
         
         footer {
             text-align: center;
-            padding: 30px;
-            color: white;
+            padding: 40px;
+            background: #111;
+            border-top: 1px solid #222;
             margin-top: 40px;
+        }
+        
+        footer h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        footer p {
+            color: #808080;
+            margin-bottom: 20px;
         }
         
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 30px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            color: #b0b0b0;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            color: #667eea;
+        }
+        
+        .contact-item .icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            color: #606060;
+            font-size: 0.9em;
+        }
+        
+        .architecture-diagram {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #333;
+        }
+        
+        .architecture-diagram pre {
+            background: #0a0a0a;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: #a0a0a0;
+            font-size: 0.9em;
         }
         
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 2.5em;
+            }
+            
+            header .subtitle {
+                font-size: 1.2em;
             }
             
             .content {
-                padding: 20px;
+                padding: 30px 20px;
             }
             
             .contact-info {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
             }
+            
+            .section h2 {
+                font-size: 1.5em;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🚀 DevOps Base</h1>
-        <p>Full-Stack Infrastructure Project</p>
-        <p>Комплексное решение для демонстрации DevOps навыков</p>
+        <h1>DevOps Base</h1>
+        <p class="subtitle">Full-Stack Infrastructure Project</p>
+        <p class="description">Комплексное решение для демонстрации DevOps навыков и современных практик инфраструктурного развития</p>
     </header>
     
     <div class="container">
         <div class="content">
             <div class="section">
-                <h2>📋 О проекте</h2>
-                <p>DevOps Base — это полноценный проект, демонстрирующий современные практики контейнеризации, оркестрации, мониторинга и безопасности. Проект реализован как портфолио для демонстрации навыков DevOps-инженера.</p>
+                <h2>О проекте</h2>
+                <p>DevOps Base представляет собой полноценный инфраструктурный проект, демонстрирующий современные практики контейнеризации, оркестрации, мониторинга и безопасности. Проект разработан как портфолио для демонстрации практических навыков DevOps-инженера и готовности к решению реальных производственных задач.</p>
             </div>
             
             <div class="section">
-                <h2>🛠️ Технологический стек</h2>
+                <h2>Технологический стек</h2>
                 <div class="tech-stack">
                     <div class="tech-item">
                         <h3>Docker</h3>
-                        <p>Контейнеризация</p>
+                        <p>Контейнеризация приложений</p>
                     </div>
                     <div class="tech-item">
                         <h3>Kubernetes</h3>
-                        <p>Оркестрация</p>
+                        <p>Оркестрация контейнеров</p>
                     </div>
                     <div class="tech-item">
                         <h3>GitHub Actions</h3>
-                        <p>CI/CD</p>
+                        <p>CI/CD автоматизация</p>
                     </div>
                     <div class="tech-item">
                         <h3>Prometheus</h3>
-                        <p>Мониторинг</p>
+                        <p>Сбор метрик</p>
                     </div>
                     <div class="tech-item">
                         <h3>Grafana</h3>
-                        <p>Визуализация</p>
+                        <p>Визуализация данных</p>
                     </div>
                     <div class="tech-item">
                         <h3>Nginx</h3>
@@ -207,17 +343,17 @@
                     </div>
                     <div class="tech-item">
                         <h3>PostgreSQL</h3>
-                        <p>База данных</p>
+                        <p>Реляционная база данных</p>
                     </div>
                     <div class="tech-item">
                         <h3>Certbot</h3>
-                        <p>SSL/TLS</p>
+                        <p>SSL/TLS сертификаты</p>
                     </div>
                 </div>
             </div>
             
             <div class="section">
-                <h2>✨ Ключевые возможности</h2>
+                <h2>Ключевые возможности</h2>
                 <ul class="features">
                     <li>Multi-container приложение с Docker Compose</li>
                     <li>Полноценные Kubernetes манифесты для production</li>
@@ -231,22 +367,70 @@
             </div>
             
             <div class="section">
-                <h2>🏗️ Архитектура</h2>
-                <p>Проект реализует современную архитектуру с разделением на frontend и backend сети, изоляцией сервисов и полноценным мониторингом. Все компоненты контейнеризированы и готовы для развертывания как в Docker Compose, так и в Kubernetes.</p>
+                <h2>Архитектура системы</h2>
+                <p>Проект реализует современную архитектуру с разделением на frontend и backend сети, изоляцией сервисов и полноценным мониторингом. Все компоненты контейнеризированы и готовы для развертывания как в Docker Compose, так и в Kubernetes кластере.</p>
+                
+                <div class="architecture-diagram">
+                    <pre>
+┌─────────────────────────────────────────────────────────────┐
+│                    External Access Layer                       │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│              Load Balancer / Reverse Proxy                    │
+│  ┌──────────────┐  ┌──────────────┐                          │
+│  │    Nginx     │  │   Certbot    │                          │
+│  │   (Alpine)   │  │  (SSL/TLS)   │                          │
+│  └──────────────┘  └──────────────┘                          │
+└─────────────────────────────────────────────────────────────┘
+              │                    │
+              ▼                    ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   Application Layer                            │
+│              ┌──────────────┐                                  │
+│              │  Python      │                                  │
+│              │   Backend    │                                  │
+│              └──────────────┘                                  │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                      Data Layer                               │
+│                   ┌──────────────┐                              │
+│                   │ PostgreSQL    │                              │
+│                   │    (v14)     │                              │
+│                   └──────────────┘                              │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│                  Monitoring Stack                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐        │
+│  │ Prometheus   │  │  Grafana     │  │Alertmanager  │        │
+│  │  (Metrics)   │  │(Visualize)   │  │  (Alerts)    │        │
+│  └──────────────┘  └──────────────┘  └──────────────┘        │
+│                                                             │
+│                    ┌──────────────┐                           │
+│                    │   Telegram   │                           │
+│                    │ (Notify)     │                           │
+│                    └──────────────┘                           │
+└─────────────────────────────────────────────────────────────┘
+                    </pre>
+                </div>
             </div>
             
             <div class="section">
-                <h2>📊 Мониторинг и алертинг</h2>
-                <p>Встроенная система мониторинга обеспечивает полный контроль над состоянием всех сервисов с возможностью实时 уведомлений через Telegram при возникновении проблем.</p>
+                <h2>Мониторинг и алертинг</h2>
+                <p>Встроенная система мониторинга обеспечивает полный контроль над состоянием всех сервисов с возможностью реальных уведомлений через Telegram при возникновении проблем. Prometheus собирает метрики каждые 15 секунд, Grafana предоставляет визуализацию, а Alertmanager маршрутизирует алерты.</p>
             </div>
             
             <div class="section">
-                <h2>🔒 Безопасность</h2>
-                <p>Проект включает современные практики безопасности: SSL/TLS шифрование, управление секретами, network isolation, security headers и автоматическое обновление сертификатов.</p>
+                <h2>Безопасность</h2>
+                <p>Проект включает современные практики безопасности: SSL/TLS шифрование с автоматическим обновлением сертификатов, управление секретами через Kubernetes Secrets, network isolation для разделения сетей, security headers для защиты от распространенных уязвимостей.</p>
             </div>
             
             <div class="section" style="text-align: center;">
-                <h2>🚀 Попробовать проект</h2>
+                <h2>Демонстрация проекта</h2>
                 <a href="https://github.com/qqqqqwwerty/devops-base" class="cta-button" target="_blank">Посмотреть на GitHub</a>
                 <a href="https://github.com/qqqqqwwerty/devops-base/blob/main/README.md" class="cta-button secondary" target="_blank">Читать документацию</a>
             </div>
@@ -254,27 +438,27 @@
     </div>
     
     <footer>
-        <h3>👨‍💻 Автор проекта</h3>
+        <h3>Автор проекта</h3>
         <p>Грибанов Максим | DevOps Junior Engineer</p>
         <div class="contact-info">
             <div class="contact-item">
-                <span>📧</span>
+                <div class="icon">@</div>
                 <span>gribanov.0812@gmail.com</span>
             </div>
             <div class="contact-item">
-                <span>📱</span>
+                <div class="icon">+</div>
                 <span>+7 (923) 600-61-46</span>
             </div>
             <div class="contact-item">
-                <span>💬</span>
+                <div class="icon">T</div>
                 <span>@jowexsa</span>
             </div>
             <div class="contact-item">
-                <span>📍</span>
+                <div class="icon">L</div>
                 <span>Кемерово, Россия</span>
             </div>
         </div>
-        <p style="margin-top: 20px; opacity: 0.8;">© 2024 DevOps Base Project</p>
+        <p class="copyright">2024 DevOps Base Project</p>
     </footer>
 </body>
 </html>
